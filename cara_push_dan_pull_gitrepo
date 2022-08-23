@@ -1,1 +1,15 @@
+Untuk PC atau Laptop Baru, harus buat dulu SSH Key di local kemudian attach SSH Key nya di account github nya.
+cara buat ssh key di local : $ ssh-keygen -t ed25519 -C "your_email@example.com"
+kemudian masuk ke 'setting' > 'ssh & gpg key ' > 'new ssh key ' > add key
+===============================================================================================================================
+Buat repository di github misal "Hapus"
+Di VS Code software, buka folder yang akan di push, buka terminal di VS Code ( biasanya langsung ngarah ke directory folder project tersebut)
+jalankan command berikut :
+git init >> Untuk inisialisasi folder
+git add . >> untuk add semua file pada folder sekarang
+git commit -m "Initial commit" >> Untuk kasih komen tentang push nya
+git remote add origin git@github.com:devopsgo90/Hapus.git >> untuk menambahkan remote repo / github repo yang kita buat sebelumnya
+git push origin master >> untuk push semua file yang sudah di add ke 'branch' master
+
+PS C:\Users\User\jangan_hapus> git pull git@github.com:devopsgo90/Hapus.git master >> untuk update / synchro file 'remote' dan 'local'
 
