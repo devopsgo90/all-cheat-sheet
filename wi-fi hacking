@@ -1,0 +1,21 @@
+Change MAC Address
+ifconfig wlan0 down
+ifconfig wlan0 hw ether 00:11:22:33:44:55
+ifconfig wlan0 up
+look the result :
+ifconfig
+---make permanent macc ---
+run : leafpad /etc/NetworkManager/NetworkManager.conf
+[main]
+plugins=ifupdown,keyfile
+
+[ifupdown]
+managed=false
+
+[device]
+wifi.scan-rand-mac-address=no
+
+[connection]
+ethernet.cloned-mac-address=preserve
+wifi.cloned-mac-address=preserve
+run: service network-manager restart
