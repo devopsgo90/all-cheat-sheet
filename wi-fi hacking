@@ -27,3 +27,7 @@ run: service network-manager restart
 ~# ifconfig wlan0 up
 ~# iwconfig
 
+---wifi wpa/wpa2 cracking---
+~# airodump-ng wlan0
+~# airodump-ng --bssid 60:31:97:31:8C:9C --channel 3 --write wpa_handsake wlan0
+target: terjadi handsake
